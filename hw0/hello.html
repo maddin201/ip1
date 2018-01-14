@@ -1,0 +1,182 @@
+<html>
+<title> Hello page </title>
+<script>
+
+var menuposition = "hidden";
+
+var menuleft = -175;
+
+var x = -175;
+
+var y = 0;
+
+var z = 1;
+
+var delayrate=2;
+
+var motionstep=20;
+
+function togglemenu()
+
+{
+
+        var theclicker =getObj('menucontrol');
+
+        menuFX(theclicker,'out');
+
+        if (menuposition=="hidden")
+
+        {
+
+               x=menuleft;
+
+               showmenu();
+
+        }
+
+        else
+
+        {
+
+               x=0;
+
+               hidemenu();
+
+        }
+
+}
+
+function hidemenu()
+
+{
+        if (x > menuleft)
+
+        {
+
+               x = x - motionstep;
+
+               (x < menuleft) ? x = menuleft : x=x;
+
+               shiftTo('slidemenu',x,y,z);
+
+               var timerID=setTimeout('hidemenu()',delayrate);
+
+        }
+
+        menuposition="hidden";
+
+}
+
+ 
+
+function showmenu()
+
+{
+        if (x < 0)
+
+        {
+
+               x=x + motionstep;
+
+               (x>0)?x=0:x=x;
+
+               shiftTo('slidemenu',x,y,z);
+
+               var timerID=setTimeout('showmenu()',delayrate);
+
+        }
+
+        menuposition="showing";
+
+}
+
+ 
+
+function menuFX(thisobj,theevent)
+
+{
+
+        if (theevent=='over')
+
+        {
+
+               setBackground(getObj('menucontrol'),"yellow");
+
+        }
+
+        else
+
+        {
+
+               setBackground(thisobj,"#66CCCC");
+
+        }
+
+}
+
+</script>
+<body>
+ {
+
+        background : white; color : black;
+
+        font-family: times new roman, serif;
+
+        margin-left: 10%; margin-right: 10%;
+
+        text-align: left;
+
+}
+<H1>This is theIndex page</H1>
+<h1> Homework Links for<br>Dynamic HTML</h1>
+
+<h2>Slide From Left Menus</h2>
+
+<p>The menu on the left consists of two divs positioned as side by side columns.
+
+The right column of the table is initially visible. Click on it to see the rest of
+
+the menu slide in from the left.
+
+This technique works in the latest versions of Internet Explorer, Netscape Navigator,
+
+and all browsers that support the W3C standard DOM and CSS.</p>
+
+ 
+
+<div id="slidemenu">
+
+  <div id="linksdiv">
+
+    <p class="linksheading"><b>Homework Links</b></p>
+
+    <p class="indented">
+
+      <a href="http://google.com">Google </a>
+
+      <br> <br><a href="https://twitter.com/">Twitter</a>
+
+      <br> <br><a href="http://facebook.com">Facebook</a>
+
+    </p>
+
+    
+  </div>
+
+  <div id="menucontrol" onmouseover="menuFX(this,'over');"
+
+     onmouseout="menuFX(this,'out');" onclick="togglemenu();">
+
+    <b><br><br>M<br>E<br>N<br>U</b>
+
+  </div>
+
+</div>
+
+ 
+
+<p>Click the Menu on the left to see the links.</p>
+<p> Thisisthe index page</p>
+
+</body>
+</html>
