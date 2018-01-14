@@ -1,0 +1,59 @@
+
+
+<html>
+<head>
+<title>Homework 5-3</title>
+<style type="text/css">
+first{
+    background: yellow;  
+}	
+</style>
+<script type="text/javascript">
+var i=1;
+        function insertnode() {
+            var node1 = document.getElementById('first');
+         
+            var elem = document.createElement("img");
+elem.setAttribute("src", "bird.png");
+elem.setAttribute("height", "100");
+elem.setAttribute("width", "100");
+elem.setAttribute("alt", "Bird");
+ 
+            
+            node1.appendChild(elem);
+
+        }
+        function removenode() {
+            var node2 = document.getElementById('first');
+            if (node2.childNodes[1] != null) {
+                node2.removeChild(node2.childNodes[1]);
+            }
+            else
+            {
+                alert("no child nodes");
+            }
+          
+        }
+
+          </script>
+</head>
+<body bgcolor = "#7FD4FF">			
+<h3> <em>Click on buttons for add and remove the nodes</em></h3><br><br>
+
+
+<div id="first"><p><u>Main Node</u></p>
+
+ 
+<img src="bird.png" height= "100" width= "100"/>
+ 
+
+</div>
+
+<input id="Button1" onclick="insertnode()" type="button" value="add element" /> 
+<input id="Button1" onclick="removenode()" type="button" value="Remove" /><br /><br />
+
+
+
+
+</body>
+</html>

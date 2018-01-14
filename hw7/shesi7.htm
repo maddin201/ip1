@@ -1,0 +1,215 @@
+
+
+<HTML>
+
+<HEAD>
+
+<SCRIPT> 
+
+  if (window.XMLHttpRequest)
+
+          {// code for IE7+, Firefox, Chrome, Opera, Safari
+
+              xmlhttp=new XMLHttpRequest();
+
+          }
+
+          else
+
+          {// code for IE6, IE5
+
+              xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+
+          }
+
+xmlhttp.open("GET","books.xml",false);
+
+xmlhttp.send();
+
+xmlDoc=xmlhttp.responseXML;
+function start()
+      {
+        var table = ""; 
+        childrenNodes = xmlDoc.childNodes[0].childNodes; 
+        if (childrenNodes[0].nodeType == 1)
+        {
+        	heading = childrenNodes[0];
+       	}
+        else {
+        	heading = childrenNodes[1];
+        }
+        	
+	    table += "<TABLE BORDER=2>";
+	    table += "<TR>";
+	 
+	    for (j = 0; j < heading.childNodes.length; j++)
+	    {
+	    	if (heading.childNodes[j].nodeType == 1) {
+	      		table += "<TH>" + heading.childNodes[j].nodeName + "</TH>";
+          	}
+        }
+	    table += "</TR>";
+
+	    for (i = 0; i < childrenNodes.length; i++)
+        {
+           thisChild = childrenNodes[i];
+           if (thisChild.nodeType == 1) {
+	       		table += "<TR>";for (j = 0; j < thisChild.childNodes.length; j++)
+	       		{thatProperty = thisChild.childNodes[j];
+	       			if (thatProperty.nodeType == 1) 	    	
+					{
+						table += "<TD>" + thatProperty.childNodes[0].nodeValue + "</TD>";
+           	  		}
+           	  	}
+           }
+	       table += "</TR>";
+         }
+         table += "</TABLE>"; 
+         document.getElementById("display").innerHTML = table;
+       }
+ function showData()
+
+{
+
+  document.getElementById('display').innerHTML = "";
+   var match = linearSearch();   if (matches.length == 0)
+
+  {
+  alert("Enter valid option"+match);
+  return;
+
+  }
+
+  makeData(matches);
+
+}
+ function linearSearch()
+
+{
+
+  var searchauthor = document.getElementById('author').value;
+
+  matches = new Array();
+
+  count = 0;
+
+  a = xmlDoc.getElementsByTagName("book");
+
+  for (i = 0; i < a.length; i++)
+
+  {
+   var p1 = a[i];
+   thisauthor = p1.getElementsByTagName("author")[0].childNodes[0].nodeValue;
+   if (thisauthor == searchauthor)
+   {
+        matches[count] = i;
+        count++;
+   }
+
+  }
+
+  return matches;
+
+}
+ function makeData(matches)
+
+{        
+       table = "";
+       table += "<TABLE BORDER=2>";
+       table += "<TR>";
+    myp1 = xmlDoc.getElementsByTagName("book")[0];
+       for (j = 0; j < myp1.childNodes.length; j++)
+       {
+        if (myp1.childNodes[j].nodeType == 1) {            
+         table += "<TH>" + myp1.childNodes[j].nodeName + "</TH>";
+         }
+       }
+       table += "</TR>";
+      for (i = 0; i < matches.length; i++)
+       {
+        table += "<TR>";
+       myp1 = xmlDoc.getElementsByTagName("book")[matches[i]];
+       for (j = 0; j < myp1.childNodes.length; j++)
+       {
+             thatProperty = myp1.childNodes[j];
+             if (thatProperty.nodeType == 1)       
+            {                 table += "<TD>" + thatProperty.childNodes[0].nodeValue + "</TD>";
+            }
+       }
+        table += "</TR>";
+       }
+       table += "</TABLE>";
+       document.getElementById("display").innerHTML = table;
+ }
+ </SCRIPT>
+ 
+ 
+ <style type="text/css">
+<!--
+body    
+{ 
+    background-position: 0% 0%;
+	color:white;font-family:Arial, Helvetica, sans-serif;
+	background-color: #00D4FF;
+	background-repeat: repeat;
+	background-attachment: scroll;
+}
+  
+table{
+    background-color : #yellow;
+}
+
+
+table {
+  width: 80%;
+  align: center; 
+border-spacing: 5px;
+ padding: 10px;
+ }
+td {
+  padding: 10px;
+  background-color : #9FDE8A;
+}
+
+th {
+ background-color : #C98ADE;
+  padding: 10px;
+}	
+
+
+	
+ 
+-->
+</style>
+</HEAD>
+
+<BODY>
+ 	<br>	<br>	<br>	<br>
+<h1 align="center">Homework - 7a </h1>
+ 
+<br /><br /><br />
+
+ Author Name: <INPUT TYPE="text" id="author" value="author1">
+<INPUT TYPE="button" VALUE="search" onClick='showData();'>
+
+<br>
+<h1>Here:</h1>
+
+ <p class="auto-style1"><strong>Data</strong></p>
+ 
+ 
+
+ <button name="start" onclick="start()"> Show Data</button><br /><br />
+
+<center>
+<DIV id="display">
+
+	<br>
+
+</DIV> 
+
+</center>
+
+</BODY>
+
+</HTML>

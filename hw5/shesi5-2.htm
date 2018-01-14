@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<style>
+#container {
+  width: 800px;
+  height: 100px;
+  position: relative;
+   
+}
+#animate {
+  width: 100px;
+  height: 70px;
+  position: absolute;
+  
+}
+</style>
+<body>
+
+
+<div id ="container"> 
+
+<div id ="animate">
+ 
+<img src="car.jpg" height="200" width="200"/>
+</div>
+</div>
+
+<br><br><br><br><br>
+<p>
+<button onclick="myMove()">Click Me</button>
+</p>
+
+<script>
+function myMove() {
+  var elem = document.getElementById("animate");
+  var pos = 0;
+  var id = setInterval(frame, 5);
+  function frame() {
+    if (pos == 1000) {
+      clearInterval(id);
+    } else {
+      pos++;
+     
+      elem.style.left = pos + 'px';
+    }
+  }
+}
+</script>
+
+</body>
+</html>
+

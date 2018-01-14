@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function myfunc()
+{
+    opt=document.getElementById("opt").value;
+  //  alert(opt);
+    window.open(opt,"_self");   
+        
+
+}
+
+
+</script>
+</head>
+<body>
+
+ <link rel="stylesheet" type ="text/css" href="style.css" />
+
+<h1 class="heading">Jumps to New Location</h1>
+
+ 
+
+ 
+<a href ="begginnerstraining.html"> Begginners</a> </li><br />
+<a href ="yoga-training-kids.html"> Kids</a> </li><br />
+<a href ="yoga-training-oldage.html"> Senior</a> </li><br />
+<a href ="weekendtraining.html"> workingprof</a> </li><br /><br /><br />
+
+<h3>Select Specialist from the Dropdown List</h3>
+
+<select  id="opt" onChange="myfunc()">
+	<option value="begginnerstraining.html">Begginners</option>
+		<option value="yoga-training-kids.html">Kids</option>
+			<option value="yoga-training-oldage.html">Senior</option>
+			    <option value="yoga-training-oldage.html">workingprof</option>
+</select>
+
+ 
+</body>
+</html>

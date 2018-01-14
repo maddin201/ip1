@@ -1,0 +1,101 @@
+ 
+#p2  {
+ border-style: double;
+ width : 720px;
+ text-align: center;
+}
+
+#p3 {
+    padding: 50px 30px 50px 80px;
+     font-family: verdana;
+    font-size: 20px;
+}
+
+.img {
+    height: 150px;
+    width: 150px;
+    background-color: powderblue;
+}
+
+h1 {
+    font-size: 30px;
+}
+
+#p4 {
+    font-size: 30px;
+    align: "justify";
+    font-weight: bold;
+    color: #ffffff;
+    font-family: verdana, courier;
+}
+
+#p5 {
+
+         text-align: justify;
+    text-justify: inter-word;
+      float: left;
+      font-family: verdana, courier;
+      text-align: justify;
+}
+.orderform {
+   
+     height : 100%;
+    width: 100%;
+}
+
+table.menu {
+  width: 100%;
+ text-align: center; 
+  border: 1px solid: #00FF7F;
+  border-collapse: separate;
+  border-spacing: 10px;
+  bordercolor : #00FF7F;
+    font-size: 20px;
+ }
+table.menu  td {
+  padding: 10px;
+    align: center; 
+  background-color : #E8F55B
+}
+
+th {
+  padding: 10px;
+}
+
+table.contact {
+  width: 70%;
+  align: center; 
+    background-color = #E6E6E6;
+  }
+  
+  table.contact  td {
+  padding: 10px;
+   background-color : #E6E6E6;
+}
+ table.contact  th {
+  padding: 10px;
+   background-color : #E6E6E6;
+   
+}
+ 
+ 
+a:link {
+    color: green;
+    background-color: transparent;
+    text-decoration: none;
+}
+a:visited {
+    color: black;
+    background-color: transparent;
+    text-decoration: none;
+}
+a:hover {
+    color: #ED5365;
+    background-color: transparent;
+    text-decoration: underline;
+}
+a:active {
+    color: blue;
+    background-color: transparent;
+    text-decoration: underline;
+}

@@ -1,0 +1,52 @@
+<html>
+<title>Change some CSS property.</title>
+<head>
+
+<script src="jquery-1.11.1.js"></script>
+
+<script>
+
+$(document).ready(function(){
+ 
+
+$("#div1").mouseenter(function(){
+
+  $("#div1").css({"color":"white", "background-color":"grey","height":"200px","with":"400px","font-size":"20px"});
+  $("p").fadeIn("3000");
+
+  });
+$("#div1").mouseleave(function(){
+
+  $("#div1").css({"color":"red", "background-color":"yellow","font-size":"30px"})
+  $("p").fadeOut("3000");;
+         });
+
+ 
+});
+
+</script>
+
+</head>
+
+<body>
+
+<div id="div1">
+<br />
+<p>First paragraph of document.....</p>
+
+<p>Second paragraph of document.....</p>
+
+
+
+ 
+
+</p>
+
+</div>
+ 
+
+</body>
+
+ 
+
+</html>

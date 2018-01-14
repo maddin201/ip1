@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">
+var a,b,c,d,result,text;
+function setValues()
+{
+a=Number(document.getElementById("a").value);
+b=Number(document.getElementById("b").value);
+c=Number(document.getElementById("c").value);
+d=Number(document.getElementById("d").value);
+
+
+ if (a==null || a=="" || b==null || b=="" || c==null || c=="" || d==null || d=="")
+      {
+     
+ 
+
+alert("Please Fill All Required Field");
+return false;
+
+
+}
+ 
+ document.getElementById("demo").innerHTML ="";
+
+
+}
+
+function opration()
+{
+setValues();
+result=a+b+c+d;
+
+alert("the sum is equals to "+ result);
+}
+</script>
+</head>
+<body>
+<link rel="stylesheet" type ="text/css" href="style.css" />
+
+<h1 class="heading">Calculation</h1>
+ 
+<link rel="stylesheet" type ="text/css" href="style.css" />
+<br>
+<div>
+<p id="demo"></p>
+
+	Enter a Value: <input id="a" type="text" /><br><br>
+	Enter b Value: <input id="b" type="text" /><br><br>
+	Enter c Value: <input id="c" type="text" /><br><br>
+	Enter d Value: <input id="d" type="text" /><br><br>
+	
+<input type="button" onclick="opration()" value="Calculate" /><br><br>
+
+<p>Clicking the button on the form does calculation; value displayed on form.<br><br> 
+Test to see that all text fields are not empty and display an alert if any are empty.</p>
+
+</body>
+</html>

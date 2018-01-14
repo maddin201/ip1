@@ -1,0 +1,44 @@
+ 
+<html>
+<body bgcolor="#E8F55B">
+<link rel="stylesheet" type ="text/css" href="style.css" />
+
+<h1>Prompt user for information that is then displayed on your page. </h1>
+<button ALIGN="CENTER"onclick="myFunction()">SEE THEM</button>
+
+<p>Click the button to display a dialog box which will display about the Training Info.</p>
+
+
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+    var text;
+    var instruments = prompt("Type tranining  u would like to join?", "Begginners");
+    switch(instruments) {
+        case "Begginners":
+        text = "<b>Trainer Name:</b> Edward, <br> <b> Timings :</b> 8AM to 12PM Mon to Fri";
+        break;
+    case "Kids":
+
+        text =  "<b>Trainer Name:</b>Belle , <br> <b> Batch Timings :</b> Mon-Tue-Wed. 4PM to 8PM ";
+        break;
+
+    case "Senior":
+
+        text = "<b>Trainer Name:</b>  Carrie, <br> <b> Batch Hours :</b> 9AM to 1PM Mon to Fri.";
+        break;
+     case "workingprof":
+
+        text = "Trainer Name: Jacob, <br> Batch Timing :10AM to 2PM Mon to Fri";
+        break;
+        default:
+        text = "I have never heard of the one..";
+    }
+    document.getElementById("demo").innerHTML = text;
+}
+</script>
+
+</body>
+</html>

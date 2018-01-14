@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<title>Move an object on a page.</title>
+<head>
+<script src="jquery-1.11.1.js"></script>
+ 
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+        $("div").animate({left: '950px'});
+    });
+});
+</script>
+</head>
+<body>
+
+<button>Start Animation</button>
+
+<p>By default, all HTML elements have a static position, and cannot be moved. To manipulate the position, remember to first set the CSS position property of the element to relative, fixed, or absolute!</p>
+
+<div style=";height:100px;width:100px;position:absolute;">
+<img id="img" src="car.jpg" height="100px" width="100px"/>
+</div>
+
+</body>
+</html>
+

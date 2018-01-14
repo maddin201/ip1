@@ -1,0 +1,45 @@
+<html>
+<head>
+    <title>Example 3</title>
+</head>
+
+<body>
+ 
+
+<form name="form1">
+Enter Item Name: <input type="text" name="itemname"> </br><br />
+Enter Quantity: <input type="text" name="qty"></br><br />
+
+<input type="radio" id="ordertype" value="COD" checked="checked" /> COD
+<input type="radio" id="ordertype" value="Creditcard" /> Creditcard
+ 
+<button onclick="getvalues()">Submit</button>
+
+
+</form>
+
+<script>
+
+function getvalues(){
+
+var total=0,price=12;
+itemname= (document.form1.itemname.value);
+qty= Number(document.form1.qty.value);   
+ordertype= (document.form1.ordertype.value);
+
+ 
+ 
+   total = (price * qty);
+ 
+  
+  
+    var myWindow = window.open("", "MsgWindow", "width=300, height=250");
+    myWindow.document.write("<p>Item Name : ",itemname ,"<p>Item Qty : ",qty ,
+    "</p>","<p>Item price : ",price , "</p>",
+    "<p>OrderType : ",ordertype , "</p>",
+    "<p>Total cost : ",total ,"</p>");
+  
+ }
+</script>
+</body>
+</html>
